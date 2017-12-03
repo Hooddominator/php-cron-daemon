@@ -1,0 +1,27 @@
+{
+    "name": "wiryonolau/php-cron-daemon",
+    "description": "PHP daemon for script and cronjob",
+    "license": "MIT License",
+    "type": "library",
+    "keywords": [
+        "zf2",
+        "zend framework 2"
+    ],
+    "homepage": "https://github.com/wiryonolau/php-cron-daemon",
+    "authors": [
+        {
+            "name": "Wiryono Lau",
+            "email": "wiryonolau@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "zendframework/zendframework": "2.5.*",
+        "vanushwashere/cron-expression-php5": "v1.2.0.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "CronDaemon": "src/"
+        }
+    }
+}
