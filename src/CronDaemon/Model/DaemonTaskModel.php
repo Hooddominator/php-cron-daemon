@@ -145,7 +145,7 @@ class DaemonTaskModel {
         }
 
         if (!CronExpression::isValidExpression($schedule)) {
-            throw new \Exception("Invalid schedule, must use cron format");
+            throw new \Exception("Invalid schedule, must use cronjob format");
         }
 
         $this->schedule = CronExpression::factory($schedule);
@@ -171,6 +171,7 @@ class DaemonTaskModel {
     /*
      * Internal use only
      */
+
     protected function setNextRun(\DateTime $date) {
         $this->next_run = $date;
     }
@@ -195,5 +196,4 @@ class DaemonTaskModel {
 
         $this->pids->append(new DaemonPidModel($pid, $start_time, $end_time));
     }
-
 }
