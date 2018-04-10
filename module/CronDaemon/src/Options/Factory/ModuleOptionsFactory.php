@@ -24,22 +24,21 @@
  * THE SOFTWARE.
  */
 
-namespace CronDaemon\Controller;
+namespace CronDaemon\Options\Factory;
 
-use Zend\Mvc\Controller\AbstractConsoleController;
-use CronDaemon\Service\DaemonService;
+use Interop\Container\ContainerInterface;
+use Zend\ServiceManager\Factory\FactoryInterface;
+use CronDaemon\Options\ModuleOptions;
 
-class ConsoleController extends AbstractConsoleController {
+class ModuleOptionsFactory implements FactoryInterface {
 
-    protected $daemonService;
+    public function __invoke(ContainerInterface $container, $requestedName,
+            array $options = null) {
 
-    public function __construct(DaemonService $daemonService) {
-        $this->daemonService = $daemonService;
-    }
+        $module_config = $container->get('config')['cron_daemon'];
 
-    public function runAction() {
-        $this->daemonService->runDaemon();
-        return "Daemon is running";
+        return new ModuleOptions($module_config);
+
     }
 
 }

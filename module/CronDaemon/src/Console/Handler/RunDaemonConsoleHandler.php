@@ -24,20 +24,22 @@
  * THE SOFTWARE.
  */
 
-namespace CronDaemon\Factory\Options;
+namespace CronDaemon\Console\Handler;
 
-use Zend\ServiceManager\ServiceLocatorInterface;
-use CronDaemon\Options\ModuleOptions;
-use Zend\ServiceManager\FactoryInterface;
+use CronDaemon\Service\DaemonService;
 
-class ModuleOptionsFactory implements FactoryInterface {
+class RunDaemonConsoleHandler {
 
-    /**
-     * {@inheritDoc}
-     * @return ModuleOptions
-     */
-    public function createService(ServiceLocatorInterface $serviceLocator) {
-        return new ModuleOptions($serviceLocator->get('Config')['cron_daemon']);
+    protected $daemonService;
+
+    public function __construct(DaemonService $daemonService) {
+        $this->daemonService = $daemonService;
+    }
+
+    public function __invoke($route, $console) {
+        $this->daemonService->runDaemon();
+        $console->writeLine("Daemon is running");
+        return 0;
     }
 
 }

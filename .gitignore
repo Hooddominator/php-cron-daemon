@@ -1,6 +1,5 @@
+.composer
+*.swp
+*.tmp
+*.bak
 nbproject
-vendor
-docker
-composer_cache
-composer.lock
-composer.phar
