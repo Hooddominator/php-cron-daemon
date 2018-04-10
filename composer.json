@@ -24,5 +24,16 @@
         "psr-4": {
             "CronDaemon\\": "module/CronDaemon/src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CronDaemonTest\\": "module/CronDaemon/test/"
+        }
+    },
+    "require-dev": {
+        "zendframework/zend-coding-standard": "^1.0",
+        "phpunit/phpunit": "^5.7",
+        "zendframework/zend-hydrator": "^2.3",
+        "zendframework/zend-filter": "^2.7"
     }
 }

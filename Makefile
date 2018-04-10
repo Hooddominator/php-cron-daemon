@@ -40,7 +40,7 @@ start:
 	sleep 1
 	docker exec php-cron-daemon gosu 1000 git config --global http.sslverify false
 	docker exec php-cron-daemon gosu 1000 composer self-update
-	docker exec php-cron-daemon gosu 1000 composer install --no-plugins --no-scripts --no-dev --prefer-dist -v
+	docker exec php-cron-daemon gosu 1000 composer install --no-plugins --no-scripts --prefer-dist -v
 
 stop:
 	@if [ ! "$$(docker ps -aq -f name=^/php-cron-daemon$$)" = "" ]; then \
