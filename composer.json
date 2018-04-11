@@ -1,7 +1,7 @@
 {
     "name": "wiryonolau/php-cron-daemon",
     "description": "PHP daemon for script and cronjob",
-    "license": "MIT License",
+    "license": "MIT",
     "type": "library",
     "keywords": [
         "zf2",

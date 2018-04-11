@@ -37,8 +37,9 @@ class RunDaemonConsoleHandler {
     }
 
     public function __invoke($route, $console) {
+        $console->writeLine("Start Daemon");
         $this->daemonService->runDaemon();
-        $console->writeLine("Daemon is running");
+        
         return 0;
     }
 

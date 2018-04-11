@@ -35,10 +35,11 @@ class ModuleOptionsFactory implements FactoryInterface {
     public function __invoke(ContainerInterface $container, $requestedName,
             array $options = null) {
 
-        $module_config = $container->get('config')['cron_daemon'];
+        $config = $container->get('config');
+
+        $module_config = isset($config['cron_daemon']) ? $config["cron_daemon"] : array();
 
         return new ModuleOptions($module_config);
-
     }
 
 }
