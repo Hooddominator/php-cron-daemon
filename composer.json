@@ -1,5 +1,5 @@
 {
-    "name": "wiryonolau/php-cron-daemon",
+    "name": "hooddominator/php-cron-daemon",
     "description": "PHP daemon for script and cronjob",
     "license": "MIT License",
     "type": "library",
