@@ -1,7 +1,7 @@
 {
     "name": "hooddominator/php-cron-daemon",
     "description": "PHP daemon for script and cronjob",
-    "version": "v1.0.0"
+    "version": "v1.0.0",
     "license": "MIT License",
     "type": "library",
     "keywords": [
